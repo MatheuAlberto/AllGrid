@@ -1,0 +1,65 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.grid{
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    width: 100vw;
+    grid-template-areas:
+        "header"
+        "main"
+        "sideba"
+        "ai1"
+        "ai2"  
+        "footer"  
+    ;
+    @media (min-width: 768px){
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: .5fr 2fr .5fr .5fr;
+        grid-template-areas: 
+        "header header header header header header"
+        ".      main   main   main   sideba .     "
+        ".      ai1    ai1    ai2    ai2    .     "
+        "footer footer footer footer footer footer"
+        ;
+        padding: 0px 20px;
+        width: auto;
+    }
+}
+header{
+    grid-area: header;
+background-color: skyblue;
+
+}
+header > h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    grid-area: main;
+  background-color: coral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar{
+    grid-area: sideba;
+background-color: royalblue;
+}
+.a1{
+    grid-area: ai1;
+    background-color: blueviolet;
+}
+.a2{
+    grid-area: ai2;
+    background-color: blueviolet;
+}
+footer{
+    grid-area: footer;
+    background-color: skyblue;
+}

@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+}
+header{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    width: 100vw;
+    grid-template-areas:
+        "cabeça"
+        "men"
+        "hero"
+        "main"
+        "banner"  
+        "extra"  
+        "image"
+    ;
+    @media (min-width: 768px){
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: .5fr 1.5fr 2fr .5fr .6fr;
+        grid-template-areas: 
+        "cabeça cabeça cabeça  "
+        "hero    hero    hero  "
+        "men     main    main  "
+        "men     banner  banner"
+        "men     extra   image"
+        ;
+    }
+    @media (min-width: 900px){
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: .3fr 2fr .5fr .5fr .5fr;
+        grid-template-areas: 
+        "cabeça  men     men   "
+        "hero    hero    hero  "
+        "main    .       image "
+        "main    .       extra "
+        "banner  banner  banner"
+        ;
+    }
+}
+
+.cabeça{
+    grid-area: cabeça;
+    background-color: rgb(14, 14, 32);
+}
+.menu{
+    grid-area: men;
+    background-color: rgb(188, 53, 53);
+}
+.hero{
+    grid-area: hero;
+    background-color: rgb(61, 98, 191);
+}
+.main{
+    grid-area: main;
+    background-color: rgb(12, 12, 29);
+}
+.banner{
+    grid-area: banner;
+    background-color: rgb(182, 182, 43);
+}
+.extra{
+    grid-area: extra;
+    background-color: rgb(55, 123, 55);
+}
+.image{
+    grid-area: image;
+    background-color: rgb(68, 190, 150);
+}
